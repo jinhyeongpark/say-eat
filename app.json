@@ -1,13 +1,18 @@
 {
   "expo": {
-    "name": "nutroughly",
+    "name": "say eat",
     "slug": "nutroughly",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "scheme": "nutroughly",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "식단 음성 입력을 위해 음성 인식 권한이 필요합니다",
+        "NSMicrophoneUsageDescription": "식단 음성 입력을 위해 마이크 권한이 필요합니다"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -16,10 +21,27 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "softwareKeyboardLayoutMode": "pan",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.jinh938.nutroughly"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "say eat",
+      "shortName": "say eat"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "1ecb8bfb-2516-4fe6-ab81-38bae04c07f0"
+      }
     }
   }
 }
